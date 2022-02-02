@@ -178,7 +178,7 @@
           </div>
 
           <div class="modal-footer">
-            <button type="button" id="button_confirm_transaction" class="btn btn-success" data-dismiss="modal">OK</button>
+            <button type="button" id="confirm_transaction" class="btn btn-success" data-dismiss="modal">OK</button>
           </div>
 
         </div>
@@ -219,8 +219,8 @@
                     url: document.getElementById('node_url').value + '/transactions/new',
                     type: 'POST',
                     dataType: 'json',
-                    header: {'Access-Control-Allow-Origin', '*'},
-                    data: $('confirmation_transaction_form').serialize(),
+                    header: {'Access-Control-Allow-Origin': '*'},
+                    data: $('#confirmation_transaction_form').serialize(),
                     success: function(response) {
                         $('#sender_public_key').val('');
                         $('#sender_private_key').val('');
