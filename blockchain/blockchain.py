@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from time import time
 
+
 class Blockchain:
 
     def __init__(self):
@@ -22,7 +23,6 @@ class Blockchain:
         # Reset the current list of transactions
         self.transactions = []
         self.chain.append(block)
-
 
 
 # Instantiate the Blockchain
