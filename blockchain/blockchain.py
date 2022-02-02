@@ -1,5 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, jsonify, render_template
 from time import time
+from flask_cors import CORS
 
 
 class Blockchain:
@@ -30,11 +31,18 @@ blockchain = Blockchain()
 
 # Instantiate the Node
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route('/')
 def index():
     return render_template('./index.html')
+
+
+@app.route('/transactions/new', methods=['POST'])
+def new_transaction():
+    response = {'message': 'Ok'}
+    return jsonify(response), 201
 
 
 if __name__ == '__main__':
