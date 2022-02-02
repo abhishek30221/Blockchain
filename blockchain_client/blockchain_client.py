@@ -4,6 +4,7 @@ import Crypto.Random
 from Crypto.PublicKey import RSA
 import binascii
 
+
 class Transaction:
 
     def __init__(self, sender_address, sender_private_key, recipient_address, value):
@@ -19,6 +20,11 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('index.html')
+
+
+@app.route('/generate/transaction', methods=['POST'])
+def generate_transaction():
+    return 'Done!'
 
 
 @app.route('/make/transaction')
